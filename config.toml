@@ -2,7 +2,7 @@
 # If you want to see the full configuration, please check `full-config.toml` .
 # And see https://gohugo.io/getting-started/configuration/ .
 
-baseURL = "http://leonewu.github.io/public"
+baseURL = "http://Leonewu.github.io/public"
 title = "leone"
 enableRobotsTXT = true
 enableEmoji = true
