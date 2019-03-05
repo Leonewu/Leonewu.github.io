@@ -69,51 +69,53 @@
 
 &lt;h3 id=&#34;放牌&#34;&gt;放牌&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;function poker(hand, table) {
+&lt;p&gt;```
 // 左边为顶,右边为底
 // 手顶拿一张,放一张桌子,手顶拿一张,放一张手底
 // tmp 放到手底的牌
 // table 放到桌子的牌
 // hand 起始牌(手中)
-// 逻辑: 循环,把手中的牌(hand)派到桌子上(table)和手底(tmp),递归直到tmp为空
-let tmp = []
-hand.forEach((val, idx) =&amp;gt; {
-if ((idx + 1) % 2) {
-  table.unshift(val)
-} else {
-  tmp.push(val)
+// 逻辑: 循环,把手中的牌(hand)派到桌子上(table)和手底(tmp),递归直到tmp为空&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;function poker(hand, table) {
+    let tmp = []
+    hand.forEach((val, idx) =&amp;gt; {
+        if ((idx + 1) % 2) {
+              table.unshift(val)
+          } else {
+              tmp.push(val)
+          }
+    })
+    if (hand.length % 2) {
+        // 奇数张,要放一张到手底
+        let top = tmp.shift()
+        top &amp;amp;&amp;amp; tmp.push(top)
+    }
+    if (tmp.length) {
+        poker(tmp, table)
+    }
+    return table
 }
-})
-if (hand.length % 2) {
-// 奇数张,要放一张到手底
-let top = tmp.shift()
-top &amp;amp;&amp;amp; tmp.push(top)
-}
-if (tmp.length) {
-poker(tmp, table)
-}
-return table
-}
-let a = poker([1, 2, 3], [])  // [2, 3, 1]
+let a = poker([1, 2, 3], [])  // [2, 3, 1]&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;### 反过来
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;反过来&#34;&gt;反过来&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;function reversePoker(table, hand) {
-table.forEach(val =&amp;gt; {
-let tmp = hand.pop()
-tmp &amp;amp;&amp;amp; hand.unshift(tmp)
-hand.unshift(val)
-})
-return hand
+&lt;p&gt;function reversePoker(table, hand) {
+    table.forEach(val =&amp;gt; {
+        let tmp = hand.pop()
+        tmp &amp;amp;&amp;amp; hand.unshift(tmp)
+        hand.unshift(val)
+    })
+    return hand
 }
 let a = reversePoker([2, 3, 1], [])  // [1, 2, 3]
-&lt;/code&gt;&lt;/pre&gt;
+```&lt;/p&gt;
 
 &lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
 
-&lt;p&gt;每一个步骤都是两个动作的重复,不管是正向还是反向,只要保证这一点就可以&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;</description>
+&lt;p&gt;每一个步骤都是两个动作的重复,不管是正向还是反向,只要保证这一点就可以&lt;/p&gt;</description>
       
     </item>
     
