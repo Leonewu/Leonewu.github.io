@@ -70,7 +70,7 @@
 
 <meta itemprop="datePublished" content="2019-03-05T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-03-05T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="494">
+<meta itemprop="wordCount" content="491">
 
 
 
@@ -365,6 +365,7 @@
 <li><a href="#实现">实现</a>
 <ul>
 <li><a href="#放牌">放牌</a></li>
+<li><a href="#反过来">反过来</a></li>
 </ul></li>
 <li><a href="#总结">总结</a></li>
 </ul></li>
@@ -398,21 +399,18 @@
 <ol>
 <li>定义数组从左到右未从顶到底,如<code>[1,2,3]</code>顶为1 (跟题目相反,所以结果会有点出入)</li>
 <li>先按照题目实现</li>
-
-<li><p>再反过来</p>
+<li>再反过来</li>
+</ol>
 
 <h3 id="放牌">放牌</h3>
 
-<p>```
-// 左边为顶,右边为底
+<pre><code>// 左边为顶,右边为底
 // 手顶拿一张,放一张桌子,手顶拿一张,放一张手底
 // tmp 放到手底的牌
 // table 放到桌子的牌
 // hand 起始牌(手中)
-// 逻辑: 循环,把手中的牌(hand)派到桌子上(table)和手底(tmp),递归直到tmp为空</p></li>
-</ol>
-
-<p>function poker(hand, table) {
+// 逻辑: 循环,把手中的牌(hand)派到桌子上(table)和手底(tmp),递归直到tmp为空
+function poker(hand, table) {
     let tmp = []
     hand.forEach((val, idx) =&gt; {
         if ((idx + 1) % 2) {
@@ -431,12 +429,12 @@
     }
     return table
 }
-let a = poker([1, 2, 3], [])  // [2, 3, 1]</p>
-
-<pre><code>### 反过来
+let a = poker([1, 2, 3], [])  // [2, 3, 1]
 </code></pre>
 
-<p>function reversePoker(table, hand) {
+<h3 id="反过来">反过来</h3>
+
+<pre><code>function reversePoker(table, hand) {
     table.forEach(val =&gt; {
         let tmp = hand.pop()
         tmp &amp;&amp; hand.unshift(tmp)
@@ -445,7 +443,7 @@ let a = poker([1, 2, 3], [])  // [2, 3, 1]</p>
     return hand
 }
 let a = reversePoker([2, 3, 1], [])  // [1, 2, 3]
-```</p>
+</code></pre>
 
 <h2 id="总结">总结</h2>
 
