@@ -124,48 +124,5 @@ let a = reversePoker([2, 3, 1], [])  // [1, 2, 3]
       
     </item>
     
-    <item>
-      <title>Hugo tutorial with Jane</title>
-      <link>http://Leonewu.github.io/public/post/doc-footnote-preview/</link>
-      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>http://Leonewu.github.io/public/post/doc-footnote-preview/</guid>
-      
-        <description>&lt;p&gt;Hugo-theme-jane optimized for footnote. When you mouse hover the footnote&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:example&#34;&gt;&lt;a href=&#34;#fn:example&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; , footnote content will be displayed.&lt;/p&gt;
-
-&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
-
-&lt;p&gt;You can create footnotes like this&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:Install&#34;&gt;&lt;a href=&#34;#fn:Install&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.
-init a folder&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;snap install hugo --channel=extended
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;init&#34;&gt;Init&lt;/h2&gt;
-
-&lt;p&gt;You can create footnotes like this&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:Init&#34;&gt;&lt;a href=&#34;#fn:Init&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;hugo new site leone-website
- cd leone-website
- git clone https://github.com/xianmin/hugo-theme-jane.git --depth=1 themes/jane
- cp -r themes/jane/exampleSite/content ./
- cp themes/jane/exampleSite/config.toml ./
-&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:example&#34;&gt;example footnote show.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:example&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:Install&#34;&gt;Here is the &lt;em&gt;text&lt;/em&gt; of the &lt;strong&gt;Install&lt;/strong&gt;.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:Install&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:Init&#34;&gt;Here is the &lt;em&gt;text&lt;/em&gt; of the &lt;strong&gt;Init&lt;/strong&gt;.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:Init&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;</description>
-      
-    </item>
-    
   </channel>
 </rss>
