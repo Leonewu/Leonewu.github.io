@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>proto on Leone</title>
-    <link>https://leonewu.github.io/tags/proto/</link>
+    <link>https://leonewu.github.io/public/tags/proto/</link>
     <description>Recent content in proto on Leone</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 06 Mar 2019 10:22:03 +0800</lastBuildDate>
     
-	<atom:link href="https://leonewu.github.io/tags/proto/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://leonewu.github.io/public/tags/proto/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>__proto__和prototype</title>
-      <link>https://leonewu.github.io/post/%E5%8E%9F%E5%9E%8B%E9%93%BE/</link>
+      <link>https://leonewu.github.io/public/post/%E5%8E%9F%E5%9E%8B%E9%93%BE/</link>
       <pubDate>Wed, 06 Mar 2019 10:22:03 +0800</pubDate>
       
-      <guid>https://leonewu.github.io/post/%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
+      <guid>https://leonewu.github.io/public/post/%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
       <description>原型和原型链 显式原型: prototype 隐式原型: proto 每一个对象都有 proto 属性, 只有函数才有 prototype 属性 假设现在有以下代码 1 2 3 4 5 function A() { this.name = &amp;#39;oo&amp;#39; } let a = new A() // a = { name: &amp;#39;oo&amp;#39;</description>
     </item>
     
