@@ -1,200 +1,43 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>leone</title>
-    <link>http://Leonewu.github.io/public/</link>
-    <description>Recent content on leone</description>
+    <title>Even - A super concise theme for Hugo</title>
+    <link>https://leonewu.github.io/</link>
+    <description>Recent content on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en</language>
     <lastBuildDate>Sun, 20 Aug 2017 21:38:52 +0800</lastBuildDate>
     
-        <atom:link href="http://Leonewu.github.io/public/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://leonewu.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>http://Leonewu.github.io/public/about/</link>
+      <link>https://leonewu.github.io/about/</link>
       <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
       
-      <guid>http://Leonewu.github.io/public/about/</guid>
-      
-        <description>&lt;p&gt;Hugo is a static site engine written in Go.&lt;/p&gt;
-
-&lt;p&gt;It makes use of a variety of open source projects including:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cobra&#34;&gt;Cobra&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/viper&#34;&gt;Viper&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/jWalterWeatherman&#34;&gt;J Walter Weatherman&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cast&#34;&gt;Cast&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-</description>
-      
+      <guid>https://leonewu.github.io/about/</guid>
+      <description>Hugo is a static site engine written in Go.
+It makes use of a variety of open source projects including:
+ Cobra Viper J Walter Weatherman Cast  Learn more and contribute on GitHub.</description>
     </item>
     
     <item>
       <title>__proto__和prototype</title>
-      <link>http://Leonewu.github.io/public/post/%E5%8E%9F%E5%9E%8B%E9%93%BE/</link>
+      <link>https://leonewu.github.io/post/%E5%8E%9F%E5%9E%8B%E9%93%BE/</link>
       <pubDate>Wed, 06 Mar 2019 10:22:03 +0800</pubDate>
       
-      <guid>http://Leonewu.github.io/public/post/%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
-      
-        <description>
-
-&lt;h2 id=&#34;原型和原型链&#34;&gt;原型和原型链&lt;/h2&gt;
-
-&lt;p&gt;显式原型: prototype
-隐式原型: &lt;strong&gt;proto&lt;/strong&gt;
-每一个对象都有 &lt;strong&gt;proto&lt;/strong&gt; 属性, 只有函数才有 prototype 属性
-假设现在有以下代码&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  function A() {
-    this.name = &#39;oo&#39;
-  }
-  let a = new A()
-  // a = { name: &#39;oo&#39; }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;当a.name时,首先会在a自身找name,
-找不到会一直沿着a.&lt;strong&gt;proto&lt;/strong&gt;找,即a.&lt;strong&gt;proto&lt;/strong&gt;.name,
-再找不到就继续到a.&lt;strong&gt;proto&lt;/strong&gt;.&lt;strong&gt;proto&lt;/strong&gt;.name,依此类推&amp;hellip;这就是原型链
-而a.&lt;strong&gt;proto&lt;/strong&gt; 指向其构造函数(constructor)的prototype
-因此,可有以下实现&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  A.prototype.blog = &#39;leone&#39;
-  console.log(a.blog)
-  // leone
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;扩展&#34;&gt;扩展&lt;/h2&gt;
-
-&lt;h3 id=&#34;继承&#34;&gt;继承&lt;/h3&gt;
-
-&lt;p&gt;这样的话就通过原型链,可以实现继承&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  function A() {
-    this.name = &#39;A&#39;
-    this.blog = &#39;leone&#39;
-  }
-  function B() {
-    this.name = &#39;B&#39;
-  }
-  B.prototype = new A()
-  let b = new B()
-  console.log(b)
-  // b: { name: &#39;B&#39; }
-  // 注意,继承后属性会覆盖
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这里为什么要这样写? 因为如果要让b能访问b.blog,根据原型链
-b自身没有blog属性,所以到b.&lt;strong&gt;prpto&lt;/strong&gt;(即B.prototype找),指到一个有blog属性的对象就可以了&lt;/p&gt;
-
-&lt;h3 id=&#34;new运算符&#34;&gt;new运算符&lt;/h3&gt;
-
-&lt;p&gt;new的时候做了三件事&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  var obj  = {};
-  obj.__proto__ = F.prototype;
-  F.call(obj);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.zhihu.com/question/34183746&#34;&gt;js中&lt;strong&gt;proto&lt;/strong&gt;和prototype的区别和关系？&lt;/a&gt;&lt;/p&gt;
-</description>
-      
+      <guid>https://leonewu.github.io/post/%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
+      <description>原型和原型链 显式原型: prototype 隐式原型: proto 每一个对象都有 proto 属性, 只有函数才有 prototype 属性 假设现在有以下代码 1 2 3 4 5 function A() { this.name = &amp;#39;oo&amp;#39; } let a = new A() // a = { name: &amp;#39;oo&amp;#39;</description>
     </item>
     
     <item>
       <title>算法-扑克牌问题</title>
-      <link>http://Leonewu.github.io/public/post/%E7%AE%97%E6%B3%95%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB/</link>
+      <link>https://leonewu.github.io/post/%E7%AE%97%E6%B3%95%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://Leonewu.github.io/public/post/%E7%AE%97%E6%B3%95%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB/</guid>
-      
-        <description>&lt;h2 id=&#34;题目&#34;&gt;题目&lt;/h2&gt;
-
-&lt;p&gt;我手中有一堆扑克牌， 但是观众不知道它的顺序。&lt;/p&gt;
-
-&lt;p&gt;第一步， 我从牌顶拿出一张牌， 放到桌子上。&lt;/p&gt;
-
-&lt;p&gt;第二步， 我从牌顶再拿一张牌， 放在手上牌的底部。&lt;/p&gt;
-
-&lt;p&gt;第三步， 重复第一步、第二步的操作， 直到我手中所有的牌都放到了桌子上。&lt;/p&gt;
-
-&lt;p&gt;最后， 观众可以看到桌子上牌的顺序是：(牌底部）1,2,3,4,5,6,7,8,9,10,11,12,13(牌顶部）&lt;/p&gt;
-
-&lt;p&gt;请问， 我刚开始拿在手里的牌的顺序是什么？&lt;/p&gt;
-
-&lt;p&gt;请编程实现。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000017001391#articleHeader9&#34;&gt;链接&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;定义数组从左到右未从顶到底,如&lt;code&gt;[1,2,3]&lt;/code&gt;顶为1 (跟题目相反,所以结果会有点出入)&lt;/li&gt;
-&lt;li&gt;先按照题目实现&lt;/li&gt;
-&lt;li&gt;再反过来&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;放牌&#34;&gt;放牌&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;// 左边为顶,右边为底
-// 手顶拿一张,放一张桌子,手顶拿一张,放一张手底
-// tmp 放到手底的牌
-// table 放到桌子的牌
-// hand 起始牌(手中)
-// 逻辑: 循环,把手中的牌(hand)派到桌子上(table)和手底(tmp),递归直到tmp为空
-function poker(hand, table) {
-    let tmp = []
-    hand.forEach((val, idx) =&amp;gt; {
-        if ((idx + 1) % 2) {
-              table.unshift(val)
-          } else {
-              tmp.push(val)
-          }
-    })
-    if (hand.length % 2) {
-        // 奇数张,要放一张到手底
-        let top = tmp.shift()
-        top &amp;amp;&amp;amp; tmp.push(top)
-    }
-    if (tmp.length) {
-        poker(tmp, table)
-    }
-    return table
-}
-let a = poker([1, 2, 3], [])  // [2, 3, 1]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;反过来&#34;&gt;反过来&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;// 先考虑正向放牌
-// (先把手顶的牌放桌子,再把手顶的牌放手底,就算手中只有一张牌或者没有牌,也会把&#39;牌&#39;放到手底)
-// 所以最后一个动作是把牌放手底
-// 反过来,第一个动作就是把手底的牌放在手顶,第二个动作才是把桌子顶部的牌放到手顶,如此反复...
-// 直到桌子上没有牌,也就是说
-// 对桌子上的牌进行遍历,每一次遍历都会把牌放到手顶,但这个动作的前一个动作是将手底的牌放到手顶
-// 即使手中没有牌或者手中只有一张牌,都要进行这一个动作
-function reversePoker(table) {
-    let hand = []
-    table.forEach(val =&amp;gt; {
-        let tmp = hand.pop()
-        tmp &amp;amp;&amp;amp; hand.unshift(tmp)
-        hand.unshift(val)
-    })
-    return hand
-}
-let a = reversePoker([2, 3, 1], [])  // [1, 2, 3]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
-
-&lt;p&gt;每一个步骤都是两个动作的重复,不管是正向还是反向,只要保证这一点就可以&lt;/p&gt;</description>
-      
+      <guid>https://leonewu.github.io/post/%E7%AE%97%E6%B3%95%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB/</guid>
+      <description>题目 我手中有一堆扑克牌， 但是观众不知道它的顺序。 第一步， 我从牌顶拿出一张牌， 放到桌子上。 第二步， 我从牌顶再拿一张牌， 放在手上牌的底部。 第三步</description>
     </item>
     
   </channel>

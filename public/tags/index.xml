@@ -1,67 +1,66 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on leone</title>
-    <link>http://Leonewu.github.io/public/tags/</link>
-    <description>Recent content in Tags on leone</description>
+    <title>Tags on Even - A super concise theme for Hugo</title>
+    <link>https://leonewu.github.io/tags/</link>
+    <description>Recent content in Tags on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Wed, 06 Mar 2019 10:22:03 +0800</lastBuildDate>
+    <language>en</language>
     
-	<atom:link href="http://Leonewu.github.io/public/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://leonewu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Proto</title>
-      <link>http://Leonewu.github.io/public/tags/proto/</link>
+      <title>proto</title>
+      <link>https://leonewu.github.io/tags/proto/</link>
       <pubDate>Wed, 06 Mar 2019 10:22:03 +0800</pubDate>
       
-      <guid>http://Leonewu.github.io/public/tags/proto/</guid>
+      <guid>https://leonewu.github.io/tags/proto/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Prototype</title>
-      <link>http://Leonewu.github.io/public/tags/prototype/</link>
+      <title>prototype</title>
+      <link>https://leonewu.github.io/tags/prototype/</link>
       <pubDate>Wed, 06 Mar 2019 10:22:03 +0800</pubDate>
       
-      <guid>http://Leonewu.github.io/public/tags/prototype/</guid>
+      <guid>https://leonewu.github.io/tags/prototype/</guid>
       <description></description>
     </item>
     
     <item>
       <title>原型</title>
-      <link>http://Leonewu.github.io/public/tags/%E5%8E%9F%E5%9E%8B/</link>
+      <link>https://leonewu.github.io/tags/%E5%8E%9F%E5%9E%8B/</link>
       <pubDate>Wed, 06 Mar 2019 10:22:03 +0800</pubDate>
       
-      <guid>http://Leonewu.github.io/public/tags/%E5%8E%9F%E5%9E%8B/</guid>
+      <guid>https://leonewu.github.io/tags/%E5%8E%9F%E5%9E%8B/</guid>
       <description></description>
     </item>
     
     <item>
       <title>原型链</title>
-      <link>http://Leonewu.github.io/public/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE/</link>
+      <link>https://leonewu.github.io/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE/</link>
       <pubDate>Wed, 06 Mar 2019 10:22:03 +0800</pubDate>
       
-      <guid>http://Leonewu.github.io/public/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
+      <guid>https://leonewu.github.io/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
       <description></description>
     </item>
     
     <item>
       <title>算法</title>
-      <link>http://Leonewu.github.io/public/tags/%E7%AE%97%E6%B3%95/</link>
+      <link>https://leonewu.github.io/tags/%E7%AE%97%E6%B3%95/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://Leonewu.github.io/public/tags/%E7%AE%97%E6%B3%95/</guid>
+      <guid>https://leonewu.github.io/tags/%E7%AE%97%E6%B3%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>面试</title>
-      <link>http://Leonewu.github.io/public/tags/%E9%9D%A2%E8%AF%95/</link>
+      <link>https://leonewu.github.io/tags/%E9%9D%A2%E8%AF%95/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://Leonewu.github.io/public/tags/%E9%9D%A2%E8%AF%95/</guid>
+      <guid>https://leonewu.github.io/tags/%E9%9D%A2%E8%AF%95/</guid>
       <description></description>
     </item>
     
