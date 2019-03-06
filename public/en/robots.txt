@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: http://Leonewu.github.io/public/sitemap.xml

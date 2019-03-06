@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -70,7 +70,7 @@
 
 <meta itemprop="datePublished" content="2019-03-06T10:22:03&#43;08:00" />
 <meta itemprop="dateModified" content="2019-03-06T10:22:03&#43;08:00" />
-<meta itemprop="wordCount" content="396">
+<meta itemprop="wordCount" content="423">
 
 
 
@@ -312,14 +312,18 @@
     
     
 <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Table of Contents</h2>
+  <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
 <li>
 <ul>
 <li><a href="#原型和原型链">原型和原型链</a></li>
-<li><a href="#启发">启发</a></li>
+<li><a href="#扩展">扩展</a>
+<ul>
+<li><a href="#继承">继承</a></li>
+<li><a href="#new运算符">new运算符</a></li>
+</ul></li>
 <li><a href="#参考">参考</a></li>
 </ul></li>
 </ul>
@@ -356,7 +360,9 @@
   // leone
 </code></pre>
 
-<h2 id="启发">启发</h2>
+<h2 id="扩展">扩展</h2>
+
+<h3 id="继承">继承</h3>
 
 <p>这样的话就通过原型链,可以实现继承</p>
 
@@ -377,6 +383,15 @@
 <p>这里为什么要这样写? 因为如果要让b能访问b.blog,根据原型链
 b自身没有blog属性,所以到b.<strong>prpto</strong>(即B.prototype找),指到一个有blog属性的对象就可以了</p>
 
+<h3 id="new运算符">new运算符</h3>
+
+<p>new的时候做了三件事</p>
+
+<pre><code>  var obj  = {};
+  obj.__proto__ = F.prototype;
+  F.call(obj);
+</code></pre>
+
 <h2 id="参考">参考</h2>
 
 <p><a href="https://www.zhihu.com/question/34183746">js中<strong>proto</strong>和prototype的区别和关系？</a></p>
@@ -387,16 +402,16 @@ b自身没有blog属性,所以到b.<strong>prpto</strong>(即B.prototype找),指
     
 <div class="post-copyright">
   <p class="copyright-item">
-    <span class="item-title">Author</span>
+    <span class="item-title">文章作者</span>
     <span class="item-content">leone</span>
   </p>
   <p class="copyright-item">
-    <span class="item-title">LastMod</span>
+    <span class="item-title">上次更新</span>
     <span class="item-content">2019-03-06</span>
   </p>
   
   <p class="copyright-item">
-    <span class="item-title">License</span>
+    <span class="item-title">许可协议</span>
     <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
   </p>
 </div>
@@ -420,7 +435,7 @@ b自身没有blog属性,所以到b.<strong>prpto</strong>(即B.prototype找),指
         
           <a class="next" href="/public/post/%E7%AE%97%E6%B3%95%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB/">
             <span class="next-text nav-default">算法-扑克牌问题</span>
-            <span class="prev-text nav-mobile">Next</span>
+            <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
               <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -450,7 +465,7 @@ b自身没有blog属性,所以到b.<strong>prpto</strong>(即B.prototype找),指
 
   <div class="disqus-comment">
   <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
-    Show Disqus Comments
+    显示 Disqus 评论
   </div>
   <div id="disqus_thread"></div>
   <script type="text/javascript">

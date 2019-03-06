@@ -5,7 +5,7 @@
     <link>http://Leonewu.github.io/public/</link>
     <description>Recent content on leone</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>zh-cn</language>
     <lastBuildDate>Sun, 20 Aug 2017 21:38:52 +0800</lastBuildDate>
     
         <atom:link href="http://Leonewu.github.io/public/index.xml" rel="self" type="application/rss+xml" />
@@ -68,7 +68,9 @@
   // leone
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;启发&#34;&gt;启发&lt;/h2&gt;
+&lt;h2 id=&#34;扩展&#34;&gt;扩展&lt;/h2&gt;
+
+&lt;h3 id=&#34;继承&#34;&gt;继承&lt;/h3&gt;
 
 &lt;p&gt;这样的话就通过原型链,可以实现继承&lt;/p&gt;
 
@@ -88,6 +90,15 @@
 
 &lt;p&gt;这里为什么要这样写? 因为如果要让b能访问b.blog,根据原型链
 b自身没有blog属性,所以到b.&lt;strong&gt;prpto&lt;/strong&gt;(即B.prototype找),指到一个有blog属性的对象就可以了&lt;/p&gt;
+
+&lt;h3 id=&#34;new运算符&#34;&gt;new运算符&lt;/h3&gt;
+
+&lt;p&gt;new的时候做了三件事&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  var obj  = {};
+  obj.__proto__ = F.prototype;
+  F.call(obj);
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
 
