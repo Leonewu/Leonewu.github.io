@@ -35,6 +35,68 @@
     </item>
     
     <item>
+      <title>__proto__和prototype</title>
+      <link>http://Leonewu.github.io/public/post/%E5%8E%9F%E5%9E%8B%E9%93%BE/</link>
+      <pubDate>Wed, 06 Mar 2019 10:22:03 +0800</pubDate>
+      
+      <guid>http://Leonewu.github.io/public/post/%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;原型和原型链&#34;&gt;原型和原型链&lt;/h2&gt;
+
+&lt;p&gt;显式原型: prototype
+隐式原型: &lt;strong&gt;proto&lt;/strong&gt;
+每一个对象都有 &lt;strong&gt;proto&lt;/strong&gt; 属性, 只有函数才有 prototype 属性
+假设现在有以下代码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  function A() {
+    this.name = &#39;oo&#39;
+  }
+  let a = new A()
+  // a = { name: &#39;oo&#39; }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;当a.name时,首先会在a自身找name,
+找不到会一直沿着a.&lt;strong&gt;proto&lt;/strong&gt;找,即a.&lt;strong&gt;proto&lt;/strong&gt;.name,
+再找不到就继续到a.&lt;strong&gt;proto&lt;/strong&gt;.&lt;strong&gt;proto&lt;/strong&gt;.name,依此类推&amp;hellip;这就是原型链
+而a.&lt;strong&gt;proto&lt;/strong&gt; 指向其构造函数(constructor)的prototype
+因此,可有以下实现&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  A.prototype.blog = &#39;leone&#39;
+  console.log(a.blog)
+  // leone
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;启发&#34;&gt;启发&lt;/h2&gt;
+
+&lt;p&gt;这样的话就通过原型链,可以实现继承&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  function A() {
+    this.name = &#39;A&#39;
+    this.blog = &#39;leone&#39;
+  }
+  function B() {
+    this.name = &#39;B&#39;
+  }
+  B.prototype = new A()
+  let b = new B()
+  console.log(b)
+  // b: { name: &#39;B&#39; }
+  // 注意,继承后属性会覆盖
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这里为什么要这样写? 因为如果要让b能访问b.blog,根据原型链
+b自身没有blog属性,所以到b.&lt;strong&gt;prpto&lt;/strong&gt;(即B.prototype找),指到一个有blog属性的对象就可以了&lt;/p&gt;
+
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.zhihu.com/question/34183746&#34;&gt;js中&lt;strong&gt;proto&lt;/strong&gt;和prototype的区别和关系？&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>算法-扑克牌问题</title>
       <link>http://Leonewu.github.io/public/post/%E7%AE%97%E6%B3%95%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>

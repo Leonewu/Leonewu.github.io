@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on leone</title>
-    <link>http://Leonewu.github.io/public/post/</link>
-    <description>Recent content in Posts on leone</description>
+    <title>Proto on leone</title>
+    <link>http://Leonewu.github.io/public/tags/proto/</link>
+    <description>Recent content in Proto on leone</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 06 Mar 2019 10:22:03 +0800</lastBuildDate>
     
-	<atom:link href="http://Leonewu.github.io/public/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://Leonewu.github.io/public/tags/proto/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>http://Leonewu.github.io/public/post/%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
       <description>原型和原型链 显式原型: prototype 隐式原型: proto 每一个对象都有 proto 属性, 只有函数才有 prototype 属性 假设现在有以下代码 function A() { this.name = &#39;oo&#39; } let a = new A() // a = { name: &#39;oo&#39; } 当a.n</description>
-    </item>
-    
-    <item>
-      <title>算法-扑克牌问题</title>
-      <link>http://Leonewu.github.io/public/post/%E7%AE%97%E6%B3%95%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB/</link>
-      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://Leonewu.github.io/public/post/%E7%AE%97%E6%B3%95%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB/</guid>
-      <description>题目 我手中有一堆扑克牌， 但是观众不知道它的顺序。 第一步， 我从牌顶拿出一张牌， 放到桌子上。 第二步， 我从牌顶再拿一张牌， 放在手上牌的底部。 第三步</description>
     </item>
     
   </channel>
