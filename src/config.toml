@@ -144,7 +144,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     notify = false  # mail notifier , https://github.com/xCss/Valine/wiki
     verify = false # Verification code
     avatar = 'retro' 
-    placeholder = '说点什么吧...'
+    placeholder = '说点什么吧...(留下邮箱,评论回复会通知到邮箱~)'
     visitor = true
 
   [params.gitalk]           # Gitalk is a comment system based on GitHub issues. see https://github.com/gitalk/gitalk

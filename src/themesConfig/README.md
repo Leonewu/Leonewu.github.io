@@ -1,0 +1,2 @@
+把文件夹移动到themes里面,覆盖
+比如even 里面的评论没有valine,就需要手动添加valine的代码到comments.html中
