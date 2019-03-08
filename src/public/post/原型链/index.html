@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>__proto__和prototype - Leone</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="leone" /><meta name="description" content="原型和原型链 显式原型: prototype 隐式原型: proto 每一个对象都有 proto 属性, 只有函数才有 prototype 属性 假设现在有以下代码 1 2 3 4 5 function A() { this.name = &amp;#39;oo&amp;#39; } let a = new A() // a = { name: &amp;#39;oo&amp;#39;" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://leonewu.github.io/post/%E5%8E%9F%E5%9E%8B%E9%93%BE/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.5bce81bd.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="__proto__和prototype" />
+<meta property="og:description" content="原型和原型链 显式原型: prototype 隐式原型: proto 每一个对象都有 proto 属性, 只有函数才有 prototype 属性 假设现在有以下代码 1 2 3 4 5 function A() { this.name = &#39;oo&#39; } let a = new A() // a = { name: &#39;oo&#39;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leonewu.github.io/post/%E5%8E%9F%E5%9E%8B%E9%93%BE/" />
+<meta property="article:published_time" content="2019-03-06T10:22:03&#43;08:00"/>
+<meta property="article:modified_time" content="2019-03-06T10:22:03&#43;08:00"/>
+
+<meta itemprop="name" content="__proto__和prototype">
+<meta itemprop="description" content="原型和原型链 显式原型: prototype 隐式原型: proto 每一个对象都有 proto 属性, 只有函数才有 prototype 属性 假设现在有以下代码 1 2 3 4 5 function A() { this.name = &#39;oo&#39; } let a = new A() // a = { name: &#39;oo&#39;">
+
+
+<meta itemprop="datePublished" content="2019-03-06T10:22:03&#43;08:00" />
+<meta itemprop="dateModified" content="2019-03-06T10:22:03&#43;08:00" />
+<meta itemprop="wordCount" content="446">
+
+
+
+<meta itemprop="keywords" content="原型,proto,prototype," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="__proto__和prototype"/>
+<meta name="twitter:description" content="原型和原型链 显式原型: prototype 隐式原型: proto 每一个对象都有 proto 属性, 只有函数才有 prototype 属性 假设现在有以下代码 1 2 3 4 5 function A() { this.name = &#39;oo&#39; } let a = new A() // a = { name: &#39;oo&#39;"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Leone</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Leone</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">__proto__和prototype</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-03-06 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"> 前端基础知识 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#原型和原型链">原型和原型链</a></li>
+<li><a href="#扩展">扩展</a>
+<ul>
+<li><a href="#继承">继承</a></li>
+<li><a href="#new运算符">new运算符</a></li>
+</ul></li>
+<li><a href="#参考">参考</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h2 id="原型和原型链">原型和原型链</h2>
+
+<p>显式原型: prototype
+隐式原型: <strong>proto</strong>
+每一个对象都有 <strong>proto</strong> 属性, 只有函数才有 prototype 属性
+假设现在有以下代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">  function A() {
+    this.name = &#39;oo&#39;
+  }
+  let a = new A()
+  // a = { name: &#39;oo&#39; }</pre></td></tr></table>
+</div>
+</div>
+<p>当a.name时,首先会在a自身找name,
+找不到会一直沿着a.<strong>proto</strong>找,即a.<strong>proto</strong>.name,
+再找不到就继续到a.<strong>proto</strong>.<strong>proto</strong>.name,依此类推&hellip;这就是原型链
+而a.<strong>proto</strong> 指向其构造函数(constructor)的prototype
+因此,可有以下实现</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">  A.prototype.blog = &#39;leone&#39;
+  console.log(a.blog)
+  // leone</pre></td></tr></table>
+</div>
+</div>
+<h2 id="扩展">扩展</h2>
+
+<h3 id="继承">继承</h3>
+
+<p>这样的话就通过原型链,可以实现继承</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">  function A() {
+    this.name = &#39;A&#39;
+    this.blog = &#39;leone&#39;
+  }
+  function B() {
+    this.name = &#39;B&#39;
+  }
+  B.prototype = new A()
+  let b = new B()
+  console.log(b)
+  // b: { name: &#39;B&#39; }
+  // 注意,继承后属性会覆盖</pre></td></tr></table>
+</div>
+</div>
+<p>这里为什么要这样写? 因为如果要让b能访问b.blog,根据原型链
+b自身没有blog属性,所以到b.<strong>prpto</strong>(即B.prototype找),指到一个有blog属性的对象就可以了</p>
+
+<h3 id="new运算符">new运算符</h3>
+
+<p>new的时候做了三件事</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">  var obj  = {};
+  obj.__proto__ = F.prototype;
+  F.call(obj);</pre></td></tr></table>
+</div>
+</div>
+<h2 id="参考">参考</h2>
+
+<p><a href="https://www.zhihu.com/question/34183746">js中<strong>proto</strong>和prototype的区别和关系？</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">leone</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-03-06
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E5%8E%9F%E5%9E%8B/">原型</a>
+          <a href="/tags/proto/">proto</a>
+          <a href="/tags/prototype/">prototype</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/%E7%AE%97%E6%B3%95%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB/">
+            <span class="next-text nav-default">算法-扑克牌问题</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <span id="/post/%E5%8E%9F%E5%9E%8B%E9%93%BE/" class="leancloud_visitors" data-flag-title="__proto__和prototype">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">1000000</span>
+    <p></p>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'vJIkaYj3dsA4y1agfH1Xai6q-gzGzoHsz',
+        appKey: 'Xp5u7OI4bd4w2pz9SUotGG6d',
+        notify:  false , 
+        verify:  false , 
+        avatar:'retro', 
+        placeholder: '说点什么吧...',
+        visitor:  true 
+    });
+  </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/Leonewu" class="iconfont icon-github" title="github"></a>
+  <a href="https://leonewu.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">leone</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
