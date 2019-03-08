@@ -24,28 +24,7 @@
   </url>
   
   <url>
-    <loc>https://leonewu.github.io/post/doc-footnote-preview/</loc>
-    <lastmod>2018-03-01T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://leonewu.github.io/categories/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://leonewu.github.io/tags/hugo/</loc>
-    <lastmod>2018-03-01T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://leonewu.github.io/tags/jane/</loc>
-    <lastmod>2018-03-01T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -66,21 +45,6 @@
   
   <url>
     <loc>https://leonewu.github.io/tags/</loc>
-    <lastmod>2018-03-01T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://leonewu.github.io/categories/docs/</loc>
-    <lastmod>2018-03-01T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://leonewu.github.io/categories/index/</loc>
-    <lastmod>2018-03-01T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -100,13 +64,6 @@
   </url>
   
   <url>
-    <loc>https://leonewu.github.io/tags/theme/</loc>
-    <lastmod>2018-03-01T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://leonewu.github.io/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</loc>
     <lastmod>2019-03-06T10:22:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -121,14 +78,14 @@
   </url>
   
   <url>
-    <loc>https://leonewu.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://leonewu.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://leonewu.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://leonewu.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
