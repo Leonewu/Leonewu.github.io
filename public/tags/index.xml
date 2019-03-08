@@ -6,9 +6,28 @@
     <description>Recent content in Tags on Leone</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Thu, 01 Mar 2018 16:01:23 +0800</lastBuildDate>
     
 	<atom:link href="https://leonewu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://leonewu.github.io/tags/hugo/</link>
+      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
+      
+      <guid>https://leonewu.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jane</title>
+      <link>https://leonewu.github.io/tags/jane/</link>
+      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
+      
+      <guid>https://leonewu.github.io/tags/jane/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>proto</title>
@@ -25,6 +44,15 @@
       <pubDate>Wed, 06 Mar 2019 10:22:03 +0800</pubDate>
       
       <guid>https://leonewu.github.io/tags/prototype/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>theme</title>
+      <link>https://leonewu.github.io/tags/theme/</link>
+      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
+      
+      <guid>https://leonewu.github.io/tags/theme/</guid>
       <description></description>
     </item>
     

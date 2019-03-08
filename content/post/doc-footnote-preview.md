@@ -2,7 +2,7 @@
 title: "Hugo tutorial with Jane"
 date: 2018-03-01T16:01:23+08:00
 lastmod: 2018-03-01T16:01:23+08:00
-draft: true
+draft: false
 tags: ["Hugo", "theme", "Jane"]
 categories: ["docs", "index"]
 author: "leone"
