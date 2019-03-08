@@ -1,4 +1,4 @@
-baseURL = "https://leonewu.github.io"
+baseURL = "https://leonewu.github.io/public"
 languageCode = "en"
 defaultContentLanguage = "en"                             # en / zh-cn / ... (This field determines which i18n file to use)
 title = "Leone"
