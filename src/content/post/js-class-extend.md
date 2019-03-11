@@ -1,5 +1,5 @@
 ---
-title: "javascript中的继承"
+title: "javascript中的类和继承"
 date: 2019-03-06T10:22:03+08:00
 draft: false
 tags: ["原型", '继承', 'prototype']
