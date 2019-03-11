@@ -50,13 +50,6 @@
   </url>
   
   <url>
-    <loc>https://leonewu.github.io/tags/proto/</loc>
-    <lastmod>2019-03-06T10:22:03+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://leonewu.github.io/tags/prototype/</loc>
     <lastmod>2019-03-06T10:22:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -87,6 +80,13 @@
   <url>
     <loc>https://leonewu.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://leonewu.github.io/tags/%E7%BB%A7%E6%89%BF/</loc>
+    <lastmod>2019-03-06T10:22:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
