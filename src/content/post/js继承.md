@@ -174,7 +174,7 @@ constructor 会指到A去
 B.prototype = A.prototype，修改B.prototype就等于修改A.prototype，会干扰所有A的实例。  
 B.prototype = new A()，A构造函数重复调用了两次（另一处调用是B构造函数中的A.call(this)），浪费效率，且如果A构造函数有副作用，重复调用可能造成不良后果.  
 + 组合继承还有一个需要注意的地方,就是当有复杂的引用类型的时候,不能写在父类的prototype里面,如A.prototype.obj = { desc: { name: 'obj' } },由于Object.create(A.prototype)是浅拷贝,所以每一个A的实例包括继承于A的类的实例,都会共享这个复杂引用对象。所以,使用组合继承时,如果父类有需要继承的复杂引用对象,一定要写在构造函数里,即this.obj = { desc: { name: 'obj' } }
-## <font color=#1abc9c>es6中的类和继承<font>
+## <font color=#1abc9c>es6中的类和继承</font>
 其实类也是基于原型链的语法糖,相关可看[babel对class的转码](https://juejin.im/entry/5aa7f3ad518825555c1d5532)  
 ```
   class A {

@@ -13,10 +13,10 @@
     
     <item>
       <title>javascript中的继承</title>
-      <link>https://leonewu.github.io/post/%E5%8E%9F%E5%9E%8B%E9%93%BE/</link>
+      <link>https://leonewu.github.io/post/js%E7%BB%A7%E6%89%BF/</link>
       <pubDate>Wed, 06 Mar 2019 10:22:03 +0800</pubDate>
       
-      <guid>https://leonewu.github.io/post/%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
+      <guid>https://leonewu.github.io/post/js%E7%BB%A7%E6%89%BF/</guid>
       <description>基本概念 原型和原型链 显式原型: prototype 隐式原型: __proto__ 每一个对象都有 __proto__ 属性, 只有函数才有 prototype 属性 对象的__proto__属性指向其构造函数的protot</description>
     </item>
     
