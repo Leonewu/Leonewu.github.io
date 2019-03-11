@@ -169,7 +169,8 @@ constructor 会指到A去
   b.fn()
   b.fn2()
 ```
-注意:   
+注意:
+
 + B.prototype = Object.create(A.prototype) 还有其他两种写法  
 B.prototype = A.prototype，修改B.prototype就等于修改A.prototype，会干扰所有A的实例。  
 B.prototype = new A()，A构造函数重复调用了两次（另一处调用是B构造函数中的A.call(this)），浪费效率，且如果A构造函数有副作用，重复调用可能造成不良后果.  

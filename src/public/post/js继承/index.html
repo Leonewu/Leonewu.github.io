@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-03-06T10:22:03&#43;08:00" />
 <meta itemprop="dateModified" content="2019-03-06T10:22:03&#43;08:00" />
-<meta itemprop="wordCount" content="2272">
+<meta itemprop="wordCount" content="2270">
 
 
 
@@ -490,11 +490,14 @@ constructor 会指到A去</p>
   b.fn2()</pre></td></tr></table>
 </div>
 </div>
-<p>注意:<br />
-+ B.prototype = Object.create(A.prototype) 还有其他两种写法<br />
+<p>注意:</p>
+
+<ul>
+<li>B.prototype = Object.create(A.prototype) 还有其他两种写法<br />
 B.prototype = A.prototype，修改B.prototype就等于修改A.prototype，会干扰所有A的实例。<br />
-B.prototype = new A()，A构造函数重复调用了两次（另一处调用是B构造函数中的A.call(this)），浪费效率，且如果A构造函数有副作用，重复调用可能造成不良后果.<br />
-+ 组合继承还有一个需要注意的地方,就是当有复杂的引用类型的时候,不能写在父类的prototype里面,如A.prototype.obj = { desc: { name: &lsquo;obj&rsquo; } },由于Object.create(A.prototype)是浅拷贝,所以每一个A的实例包括继承于A的类的实例,都会共享这个复杂引用对象。所以,使用组合继承时,如果父类有需要继承的复杂引用对象,一定要写在构造函数里,即this.obj = { desc: { name: &lsquo;obj&rsquo; } }</p>
+B.prototype = new A()，A构造函数重复调用了两次（另一处调用是B构造函数中的A.call(this)），浪费效率，且如果A构造函数有副作用，重复调用可能造成不良后果.<br /></li>
+
+<li><p>组合继承还有一个需要注意的地方,就是当有复杂的引用类型的时候,不能写在父类的prototype里面,如A.prototype.obj = { desc: { name: &lsquo;obj&rsquo; } },由于Object.create(A.prototype)是浅拷贝,所以每一个A的实例包括继承于A的类的实例,都会共享这个复杂引用对象。所以,使用组合继承时,如果父类有需要继承的复杂引用对象,一定要写在构造函数里,即this.obj = { desc: { name: &lsquo;obj&rsquo; } }</p>
 
 <h2 id="font-color-1abc9c-es6中的类和继承-font"><font color=#1abc9c>es6中的类和继承</font></h2>
 
@@ -539,52 +542,52 @@ B.prototype = new A()，A构造函数重复调用了两次（另一处调用是B
 </span><span class="lnt">36
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">  class A {
-    constructor(name, age) {
-      this.name = name
-      this.age = age
-    }
-    log() {
-      console.log(this.name)
-    }
-    static id = &#39;A&#39;
-    static logId() {
-      console.log(this.id)
-    }
-  }
-  let a = new A(&#39;a&#39;, 12)
-  a.log() // a
-  a.id // undefined
-  a.logId() // TypeError: a.logId is not a function
-  class B extends A {
-    constructor(name, age) {
-      super(name, age)
-      this.desc = &#39;B&#39;
-    }
-    logB() {
-      console.log(this.name)
-    }
-    logA() {
-      super.logId()
-    }
-    static staticLogA() {
-      //只能在静态方法里面用super.xx
-      super.logId()
-    }
-  }
-  let b = new B(&#39;b&#39;, 13)
-  b.logA() //  logId is not a function
-  b.staticLogA() // &#39;A&#39;</pre></td></tr></table>
+<pre class="chroma">class A {
+constructor(name, age) {
+  this.name = name
+  this.age = age
+}
+log() {
+  console.log(this.name)
+}
+static id = &#39;A&#39;
+static logId() {
+  console.log(this.id)
+}
+}
+let a = new A(&#39;a&#39;, 12)
+a.log() // a
+a.id // undefined
+a.logId() // TypeError: a.logId is not a function
+class B extends A {
+constructor(name, age) {
+  super(name, age)
+  this.desc = &#39;B&#39;
+}
+logB() {
+  console.log(this.name)
+}
+logA() {
+  super.logId()
+}
+static staticLogA() {
+  //只能在静态方法里面用super.xx
+  super.logId()
+}
+}
+let b = new B(&#39;b&#39;, 13)
+b.logA() //  logId is not a function
+b.staticLogA() // &#39;A&#39;</pre></td></tr></table>
 </div>
 </div>
-<h3 id="font-color-1abc9c-关键字-extends-super-static-font"><font color=#1abc9c>关键字 extends super static</font></h3>
+<h3 id="font-color-1abc9c-关键字-extends-super-static-font"><font color=#1abc9c>关键字 extends super static</font></h3></li>
 
-<ul>
-<li><strong>extends</strong><br />
-继承关键字<br /></li>
-<li><strong>static</strong><br />
+<li><p><strong>extends</strong><br />
+继承关键字</p></li>
+
+<li><p><strong>static</strong><br />
 表示静态方法或者静态对象,不会被实例的继承,也就是说实例中不会有父类static定义的东西,但是如果是会被继承到子类中去,比如上面的B.id打印出来会是&rsquo;A&rsquo;<br />
-如果要在继承的实例里面使用父类的静态方法或属性,在上述例子,即b能调用A的logId方法,则需要在B中声明静态方法,然后通过super去调用,就是说,静态方法或属性只能给子类的静态方法中用super访问<br /></li>
+如果要在继承的实例里面使用父类的静态方法或属性,在上述例子,即b能调用A的logId方法,则需要在B中声明静态方法,然后通过super去调用,就是说,静态方法或属性只能给子类的静态方法中用super访问</p></li>
 
 <li><p><strong>super</strong><br />
 super有两种用法,只有子类并且继承的时候用到<br />
