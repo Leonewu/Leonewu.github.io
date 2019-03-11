@@ -143,26 +143,26 @@
 <ul>
 <li>
 <ul>
-<li><a href="#基本概念">基本概念</a>
+<li><a href="#font-color-1abc9c-基本概念-font"><font color=#1abc9c>基本概念</font></a>
 <ul>
-<li><a href="#原型和原型链">原型和原型链</a></li>
-<li><a href="#new运算符">new运算符</a></li>
-<li><a href="#object-create">Object.create()</a></li>
+<li><a href="#font-color-1abc9c-原型和原型链-font"><font color=#1abc9c>原型和原型链</font></a></li>
+<li><a href="#font-color-1abc9c-new运算符-font"><font color=#1abc9c>new运算符</font></a></li>
+<li><a href="#font-color-1abc9c-object-create-font"><font color=#1abc9c>Object.create()</font></a></li>
 </ul></li>
-<li><a href="#两种基本继承">两种基本继承</a>
+<li><a href="#font-color-1abc9c-两种基本继承-font"><font color=#1abc9c>两种基本继承</font></a>
 <ul>
-<li><a href="#继承-原型继承">继承(原型继承)</a></li>
-<li><a href="#继承-构造函数继承">继承(构造函数继承)</a></li>
+<li><a href="#font-color-1abc9c-继承-原型继承-font"><font color=#1abc9c>继承(原型继承)</font></a></li>
+<li><a href="#font-color-1abc9c-继承-构造函数继承-font"><font color=#1abc9c>继承(构造函数继承)</font></a></li>
 </ul></li>
-<li><a href="#对比两种继承">对比两种继承</a>
+<li><a href="#font-color-1abc9c-对比两种继承-font"><font color=#1abc9c>对比两种继承</font></a>
 <ul>
-<li><a href="#原型继承的缺点">原型继承的缺点</a></li>
-<li><a href="#构造函数继承的缺点">构造函数继承的缺点</a></li>
+<li><a href="#font-color-1abc9c-原型继承的缺点-font"><font color=#1abc9c>原型继承的缺点</font></a></li>
+<li><a href="#font-color-1abc9c-构造函数继承的缺点-font"><font color=#1abc9c>构造函数继承的缺点</font></a></li>
 </ul></li>
-<li><a href="#组合继承">组合继承</a></li>
-<li><a href="#es6中的类和继承">es6中的类和继承</a>
+<li><a href="#font-color-1abc9c-组合继承-font"><font color=#1abc9c>组合继承</font></a></li>
+<li><a href="#font-color-1abc9c-es6中的类和继承-font"><font color=#1abc9c>es6中的类和继承<font></a>
 <ul>
-<li><a href="#关键字-extends-super-static">关键字 extends super static</a></li>
+<li><a href="#font-color-1abc9c-关键字-extends-super-static-font"><font color=#1abc9c>关键字 extends super static</font></a></li>
 </ul></li>
 <li><a href="#参考">参考</a></li>
 </ul></li>
@@ -173,9 +173,9 @@
     <div class="post-content">
       
 
-<h2 id="基本概念">基本概念</h2>
+<h2 id="font-color-1abc9c-基本概念-font"><font color=#1abc9c>基本概念</font></h2>
 
-<h3 id="原型和原型链">原型和原型链</h3>
+<h3 id="font-color-1abc9c-原型和原型链-font"><font color=#1abc9c>原型和原型链</font></h3>
 
 <p>显式原型: prototype<br />
 隐式原型: __proto__<br />
@@ -215,7 +215,7 @@
   // leone</pre></td></tr></table>
 </div>
 </div>
-<h3 id="new运算符">new运算符</h3>
+<h3 id="font-color-1abc9c-new运算符-font"><font color=#1abc9c>new运算符</font></h3>
 
 <p>new的时候做了三件事</p>
 <div class="highlight"><div class="chroma">
@@ -230,7 +230,7 @@
   F.call(obj)</pre></td></tr></table>
 </div>
 </div>
-<h3 id="object-create">Object.create()</h3>
+<h3 id="font-color-1abc9c-object-create-font"><font color=#1abc9c>Object.create()</font></h3>
 
 <p>Object.create实际上就相当于</p>
 <div class="highlight"><div class="chroma">
@@ -251,9 +251,9 @@
   在组合继承中会用到</pre></td></tr></table>
 </div>
 </div>
-<h2 id="两种基本继承">两种基本继承</h2>
+<h2 id="font-color-1abc9c-两种基本继承-font"><font color=#1abc9c>两种基本继承</font></h2>
 
-<h3 id="继承-原型继承">继承(原型继承)</h3>
+<h3 id="font-color-1abc9c-继承-原型继承-font"><font color=#1abc9c>继承(原型继承)</font></h3>
 
 <p>这样的话就通过改变原型链的指向,可以实现继承</p>
 <div class="highlight"><div class="chroma">
@@ -293,7 +293,7 @@
 <p>这里为什么要这样写? 因为如果要让b能访问b.blog,根据原型链
 b自身没有blog属性,所以到b.__proto__(即B.prototype找),指到一个有blog属性的对象就可以了</p>
 
-<h3 id="继承-构造函数继承">继承(构造函数继承)</h3>
+<h3 id="font-color-1abc9c-继承-构造函数继承-font"><font color=#1abc9c>继承(构造函数继承)</font></h3>
 
 <p>手动调用父类的构造函数</p>
 <div class="highlight"><div class="chroma">
@@ -328,9 +328,9 @@ b自身没有blog属性,所以到b.__proto__(即B.prototype找),指到一个有b
   //&#39;leone&#39;</pre></td></tr></table>
 </div>
 </div>
-<h2 id="对比两种继承">对比两种继承</h2>
+<h2 id="font-color-1abc9c-对比两种继承-font"><font color=#1abc9c>对比两种继承</font></h2>
 
-<h3 id="原型继承的缺点">原型继承的缺点</h3>
+<h3 id="font-color-1abc9c-原型继承的缺点-font"><font color=#1abc9c>原型继承的缺点</font></h3>
 
 <p>当出现复杂的引用类型时,就会导致多个实例共享同一个对象</p>
 <div class="highlight"><div class="chroma">
@@ -377,7 +377,7 @@ b自身没有blog属性,所以到b.__proto__(即B.prototype找),指到一个有b
 另外,原型继承还有个问题,就是 b.constructor === A // true<br />
 constructor 会指到A去</p>
 
-<h3 id="构造函数继承的缺点">构造函数继承的缺点</h3>
+<h3 id="font-color-1abc9c-构造函数继承的缺点-font"><font color=#1abc9c>构造函数继承的缺点</font></h3>
 
 <p>构造函数虽然不会出现引用类型内存共享的情况<br />
 1. new多个实例时，构造函数中的方法会在每个实例中拷贝一份，浪费内存(其实可以忽略不计)
@@ -426,7 +426,7 @@ constructor 会指到A去</p>
   // Uncaught TypeError: b.fn is not a function</pre></td></tr></table>
 </div>
 </div>
-<h2 id="组合继承">组合继承</h2>
+<h2 id="font-color-1abc9c-组合继承-font"><font color=#1abc9c>组合继承</font></h2>
 
 <p>组合继承解决了以上两种继承的缺点
 原型继承和构造函数继承的组合</p>
@@ -496,7 +496,7 @@ B.prototype = A.prototype，修改B.prototype就等于修改A.prototype，会干
 B.prototype = new A()，A构造函数重复调用了两次（另一处调用是B构造函数中的A.call(this)），浪费效率，且如果A构造函数有副作用，重复调用可能造成不良后果.<br />
 + 组合继承还有一个需要注意的地方,就是当有复杂的引用类型的时候,不能写在父类的prototype里面,如A.prototype.obj = { desc: { name: &lsquo;obj&rsquo; } },由于Object.create(A.prototype)是浅拷贝,所以每一个A的实例包括继承于A的类的实例,都会共享这个复杂引用对象。所以,使用组合继承时,如果父类有需要继承的复杂引用对象,一定要写在构造函数里,即this.obj = { desc: { name: &lsquo;obj&rsquo; } }</p>
 
-<h2 id="es6中的类和继承">es6中的类和继承</h2>
+<h2 id="font-color-1abc9c-es6中的类和继承-font"><font color=#1abc9c>es6中的类和继承<font></h2>
 
 <p>其实类也是基于原型链的语法糖,相关可看<a href="https://juejin.im/entry/5aa7f3ad518825555c1d5532">babel对class的转码</a></p>
 <div class="highlight"><div class="chroma">
@@ -577,7 +577,7 @@ B.prototype = new A()，A构造函数重复调用了两次（另一处调用是B
   b.staticLogA() // &#39;A&#39;</pre></td></tr></table>
 </div>
 </div>
-<h3 id="关键字-extends-super-static">关键字 extends super static</h3>
+<h3 id="font-color-1abc9c-关键字-extends-super-static-font"><font color=#1abc9c>关键字 extends super static</font></h3>
 
 <ul>
 <li><strong>extends</strong><br />
