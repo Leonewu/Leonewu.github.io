@@ -23,6 +23,15 @@ It makes use of a variety of open source projects including:
     </item>
     
     <item>
+      <title>关于箭头函数和react</title>
+      <link>https://leonewu.github.io/post/arrow-function/</link>
+      <pubDate>Mon, 11 Mar 2019 17:45:00 +0800</pubDate>
+      
+      <guid>https://leonewu.github.io/post/arrow-function/</guid>
+      <description>问题 为什么react中有一部分函数要手动绑定this(bind) 为什么react中箭头函数能替代手动绑定this 为什么react中要手动绑定</description>
+    </item>
+    
+    <item>
       <title>javascript中的类和继承</title>
       <link>https://leonewu.github.io/post/js-class-extend/</link>
       <pubDate>Wed, 06 Mar 2019 10:22:03 +0800</pubDate>

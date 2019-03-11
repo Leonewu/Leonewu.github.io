@@ -2,7 +2,7 @@
 # 常用定义
 title: "关于箭头函数和react"
 date: 2019-03-11T17:45:00+08:00
-draft: true
+draft: false
 tags: ['箭头函数']
 categories: ['前端基础知识']
 author: "leone"

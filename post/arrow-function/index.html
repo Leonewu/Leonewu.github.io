@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>关于箭头函数和react - Leone</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="leone" /><meta name="description" content="问题 为什么react中有一部分函数要手动绑定this(bind) 为什么react中箭头函数能替代手动绑定this 为什么react中要手动绑定" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://leonewu.github.io/post/arrow-function/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.5bce81bd.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="关于箭头函数和react" />
+<meta property="og:description" content="问题 为什么react中有一部分函数要手动绑定this(bind) 为什么react中箭头函数能替代手动绑定this 为什么react中要手动绑定" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leonewu.github.io/post/arrow-function/" />
+<meta property="article:published_time" content="2019-03-11T17:45:00&#43;08:00"/>
+<meta property="article:modified_time" content="2019-03-11T17:45:00&#43;08:00"/>
+
+<meta itemprop="name" content="关于箭头函数和react">
+<meta itemprop="description" content="问题 为什么react中有一部分函数要手动绑定this(bind) 为什么react中箭头函数能替代手动绑定this 为什么react中要手动绑定">
+
+
+<meta itemprop="datePublished" content="2019-03-11T17:45:00&#43;08:00" />
+<meta itemprop="dateModified" content="2019-03-11T17:45:00&#43;08:00" />
+<meta itemprop="wordCount" content="870">
+
+
+
+<meta itemprop="keywords" content="箭头函数," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="关于箭头函数和react"/>
+<meta name="twitter:description" content="问题 为什么react中有一部分函数要手动绑定this(bind) 为什么react中箭头函数能替代手动绑定this 为什么react中要手动绑定"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Leone</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Leone</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">关于箭头函数和react</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-03-11 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"> 前端基础知识 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      
+
+<h3 id="font-color-1abc9c-问题-font"><font color=#1abc9c>问题</font></h3>
+
+<ol>
+<li>为什么react中有一部分函数要手动绑定this(bind)</li>
+
+<li><p>为什么react中箭头函数能替代手动绑定this</p>
+
+<h3 id="font-color-1abc9c-为什么react中要手动绑定this-font"><font color=#1abc9c>为什么react中要手动绑定this</font></h3>
+
+<p>首先看一段代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">a = {
+desc: &#39;a&#39;, 
+fn() {
+  console.log(this.desc)
+}
+}
+a.fn() // a
+b = a.fn
+b() // undefined</pre></td></tr></table>
+</div>
+</div>
+<p>因为在javascript中this指向的是函数的调用者,所以a.fn()这个时候this指向的是a,而b()相当于window.b()这个时候就指向了window,window.desc就返回了undefined<br />
+再看一段react的代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">class A extends React.component {
+constructor(props) {
+super(props)
+this.state = {
+  desc: &#39;哈哈哈&#39;
+}
+// 如果click写成箭头函数就不用手动绑定this
+this.click = this.click.bind(this)
+}
+click() {
+this.setState({ desc: &#39;哦哦哦&#39; })
+}
+render() {
+const { desc } = this.state
+return (
+  &lt;div onClick={this.click}&gt;{desc}&lt;/div&gt;
+)
+}
+}</pre></td></tr></table>
+</div>
+</div>
+<p>而在react中,只有onClick,onChange这类函数才会出现this&rdquo;不正常&rdquo;的情况,这是因为在react中,对这一类回调是都是通过引用,也就是第一段代码的方式引用的,就会导致this的指向不是我们想要的</p>
+
+<h3 id="font-color-1abc9c-为什么箭头函数可以取代bind的写法-font"><font color=#1abc9c>为什么箭头函数可以取代bind的写法</font></h3>
+
+<p>因为箭头函数里没有this,所以箭头函数里的this就是上下文的this,而上下文的this就是声明类时候的this<br />
+new的时候(let a = new A()),会把this指到新建的对象,所以说类里面箭头函数的this就是指向新建的对象,所以他的this不会随着调用的对象而改变,永远指向定义的时候的上下文的this<br />
+总的来说,箭头函数里面的this在新建对象的时候就已经固定下来了<br />
+而非箭头函数的this会随着调用者而改变</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">a = {
+desc: &#39;a&#39;, 
+fn: () =&gt; {
+  console.log(this.desc)
+  console.log(this === window)
+}
+}
+a.fn() // undefined  true
+// 说明箭头函数里面本来就没有this,它的this其实就是上下文的this
+b = a.fn
+b() // undefined true</pre></td></tr></table>
+</div>
+</div>
+<p>下面的代码可以证明箭头函数里面的this不会由它的调用者改变而改变</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">function A() {
+this.desc = &#39;a&#39;
+this.fn = () =&gt; {
+console.log(this.fn)
+console.log(this)
+}
+}
+a = new A()
+a.fn()
+// &#39;a&#39; 
+// A {desc: &#34;a&#34;, fn: ƒ}
+b = a.fn
+b()
+// &#39;a&#39;
+// A {desc: &#34;a&#34;, fn: ƒ}</pre></td></tr></table>
+</div>
+</div>
+<h3 id="参考">参考</h3>
+
+<p><a href="https://github.com/umijs/umi/issues/1496">issue: React函数可以直接写？不用写成箭头函数的形式</a></p></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">leone</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-03-11
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">箭头函数</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/js-class-extend/">
+            <span class="next-text nav-default">javascript中的类和继承</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <span id="/post/arrow-function/" class="leancloud_visitors" data-flag-title="关于箭头函数和react">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">1000000</span>
+    <p></p>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'vJIkaYj3dsA4y1agfH1Xai6q-gzGzoHsz',
+        appKey: 'Xp5u7OI4bd4w2pz9SUotGG6d',
+        notify:  false , 
+        verify:  false , 
+        avatar:'retro', 
+        placeholder: '说点什么吧...(留下邮箱,评论回复会通知到邮箱~)',
+        visitor:  true 
+    });
+  </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/Leonewu" class="iconfont icon-github" title="github"></a>
+  <a href="https://leonewu.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">leone</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
