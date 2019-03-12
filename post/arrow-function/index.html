@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-03-11T17:45:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-03-11T17:45:00&#43;08:00" />
-<meta itemprop="wordCount" content="870">
+<meta itemprop="wordCount" content="834">
 
 
 
@@ -144,8 +144,8 @@
 
 <ol>
 <li>为什么react中有一部分函数要手动绑定this(bind)</li>
-
-<li><p>为什么react中箭头函数能替代手动绑定this</p>
+<li>为什么react中箭头函数能替代手动绑定this</li>
+</ol>
 
 <h3 id="font-color-1abc9c-为什么react中要手动绑定this-font"><font color=#1abc9c>为什么react中要手动绑定this</font></h3>
 
@@ -163,15 +163,15 @@
 </span><span class="lnt">9
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">a = {
-desc: &#39;a&#39;, 
-fn() {
-  console.log(this.desc)
-}
-}
-a.fn() // a
-b = a.fn
-b() // undefined</pre></td></tr></table>
+<pre class="chroma">  a = {
+    desc: &#39;a&#39;, 
+    fn() {
+      console.log(this.desc)
+    }
+  }
+  a.fn() // a
+  b = a.fn
+  b() // undefined</pre></td></tr></table>
 </div>
 </div>
 <p>因为在javascript中this指向的是函数的调用者,所以a.fn()这个时候this指向的是a,而b()相当于window.b()这个时候就指向了window,window.desc就返回了undefined<br />
@@ -200,23 +200,23 @@ b() // undefined</pre></td></tr></table>
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">class A extends React.component {
-constructor(props) {
-super(props)
-this.state = {
-  desc: &#39;哈哈哈&#39;
-}
-// 如果click写成箭头函数就不用手动绑定this
-this.click = this.click.bind(this)
-}
-click() {
-this.setState({ desc: &#39;哦哦哦&#39; })
-}
-render() {
-const { desc } = this.state
-return (
-  &lt;div onClick={this.click}&gt;{desc}&lt;/div&gt;
-)
-}
+  constructor(props) {
+    super(props)
+    this.state = {
+      desc: &#39;哈哈哈&#39;
+    }
+    // 如果click写成箭头函数就不用手动绑定this
+    this.click = this.click.bind(this)
+  }
+  click() {
+    this.setState({ desc: &#39;哦哦哦&#39; })
+  }
+  render() {
+    const { desc } = this.state
+    return (
+      &lt;div onClick={this.click}&gt;{desc}&lt;/div&gt;
+    )
+  }
 }</pre></td></tr></table>
 </div>
 </div>
@@ -224,10 +224,12 @@ return (
 
 <h3 id="font-color-1abc9c-为什么箭头函数可以取代bind的写法-font"><font color=#1abc9c>为什么箭头函数可以取代bind的写法</font></h3>
 
-<p>因为箭头函数里没有this,所以箭头函数里的this就是上下文的this,而上下文的this就是声明类时候的this<br />
-new的时候(let a = new A()),会把this指到新建的对象,所以说类里面箭头函数的this就是指向新建的对象,所以他的this不会随着调用的对象而改变,永远指向定义的时候的上下文的this<br />
-总的来说,箭头函数里面的this在新建对象的时候就已经固定下来了<br />
-而非箭头函数的this会随着调用者而改变</p>
+<ul>
+<li>因为箭头函数里没有this,所以箭头函数里的this就是上下文的this,而上下文的this就是声明类时候的this!<br /></li>
+<li>new的时候(let a = new A()),会把this指到新建的对象,这时候this的指向已经固定下来了,指向新建的对象<br /></li>
+<li>总的来说,箭头函数里面的this在新建对象的时候就已经固定下来了<br />
+而普通函数的this会随着调用者而改变</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -243,20 +245,20 @@ new的时候(let a = new A()),会把this指到新建的对象,所以说类里面
 </span><span class="lnt">11
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">a = {
-desc: &#39;a&#39;, 
-fn: () =&gt; {
-  console.log(this.desc)
-  console.log(this === window)
-}
-}
-a.fn() // undefined  true
-// 说明箭头函数里面本来就没有this,它的this其实就是上下文的this
-b = a.fn
-b() // undefined true</pre></td></tr></table>
+<pre class="chroma">  a = {
+    desc: &#39;a&#39;, 
+    fn: () =&gt; {
+      console.log(this.desc)
+      console.log(this === window)
+    }
+  }
+  a.fn() // undefined  true
+  // 说明箭头函数里面本来就没有this,它的this其实就是上下文的this
+  b = a.fn
+  b() // undefined true</pre></td></tr></table>
 </div>
 </div>
-<p>下面的代码可以证明箭头函数里面的this不会由它的调用者改变而改变</p>
+<p>下面的代码可以证明箭头函数里面的this不会随着它的调用者改变而改变</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -274,29 +276,32 @@ b() // undefined true</pre></td></tr></table>
 </span><span class="lnt">13
 </span><span class="lnt">14
 </span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">function A() {
-this.desc = &#39;a&#39;
-this.fn = () =&gt; {
-console.log(this.fn)
-console.log(this)
-}
-}
-a = new A()
-a.fn()
-// &#39;a&#39; 
-// A {desc: &#34;a&#34;, fn: ƒ}
-b = a.fn
-b()
-// &#39;a&#39;
-// A {desc: &#34;a&#34;, fn: ƒ}</pre></td></tr></table>
+<pre class="chroma">  function A() {
+    this.desc = &#39;a&#39;
+    this.fn = () =&gt; {
+      console.log(this.fn)
+      console.log(this)
+    }
+  }
+  a = new A()
+
+  a.fn()
+  // &#39;a&#39; 
+  // A {desc: &#34;a&#34;, fn: ƒ}
+
+  b = a.fn
+  b()
+  // &#39;a&#39;
+  // A {desc: &#34;a&#34;, fn: ƒ}</pre></td></tr></table>
 </div>
 </div>
 <h3 id="参考">参考</h3>
 
-<p><a href="https://github.com/umijs/umi/issues/1496">issue: React函数可以直接写？不用写成箭头函数的形式</a></p></li>
-</ol>
+<p><a href="https://github.com/umijs/umi/issues/1496">issue: React函数可以直接写？不用写成箭头函数的形式</a></p>
 
     </div>
 

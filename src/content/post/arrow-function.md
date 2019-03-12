@@ -19,8 +19,11 @@ mathjax: true    # 打开 mathjax
 ### <font color=#1abc9c>问题</font>
 1. 为什么react中有一部分函数要手动绑定this(bind)
 2. 为什么react中箭头函数能替代手动绑定this
+
 ### <font color=#1abc9c>为什么react中要手动绑定this</font>
+
 首先看一段代码
+
 ```
   a = {
     desc: 'a', 
@@ -33,7 +36,8 @@ mathjax: true    # 打开 mathjax
   b() // undefined
 ```
 因为在javascript中this指向的是函数的调用者,所以a.fn()这个时候this指向的是a,而b()相当于window.b()这个时候就指向了window,window.desc就返回了undefined   
-再看一段react的代码  
+再看一段react的代码
+
 ```
 class A extends React.component {
   constructor(props) {
@@ -55,12 +59,14 @@ class A extends React.component {
   }
 }
 ```
+
 而在react中,只有onClick,onChange这类函数才会出现this"不正常"的情况,这是因为在react中,对这一类回调是都是通过引用,也就是第一段代码的方式引用的,就会导致this的指向不是我们想要的
 ### <font color=#1abc9c>为什么箭头函数可以取代bind的写法</font>
-因为箭头函数里没有this,所以箭头函数里的this就是上下文的this,而上下文的this就是声明类时候的this  
-new的时候(let a = new A()),会把this指到新建的对象,所以说类里面箭头函数的this就是指向新建的对象,所以他的this不会随着调用的对象而改变,永远指向定义的时候的上下文的this  
-总的来说,箭头函数里面的this在新建对象的时候就已经固定下来了  
-而非箭头函数的this会随着调用者而改变  
++ 因为箭头函数里没有this,所以箭头函数里的this就是上下文的this,而上下文的this就是声明类时候的this!  
++ new的时候(let a = new A()),会把this指到新建的对象,这时候this的指向已经固定下来了,指向新建的对象  
++ 总的来说,箭头函数里面的this在新建对象的时候就已经固定下来了  
+而普通函数的this会随着调用者而改变
+
 ```
   a = {
     desc: 'a', 
@@ -74,23 +80,25 @@ new的时候(let a = new A()),会把this指到新建的对象,所以说类里面
   b = a.fn
   b() // undefined true
 ```
-下面的代码可以证明箭头函数里面的this不会由它的调用者改变而改变
+下面的代码可以证明箭头函数里面的this不会随着它的调用者改变而改变
 ```
-function A() {
-  this.desc = 'a'
-  this.fn = () => {
-    console.log(this.fn)
-    console.log(this)
+  function A() {
+    this.desc = 'a'
+    this.fn = () => {
+      console.log(this.fn)
+      console.log(this)
+    }
   }
-}
-a = new A()
-a.fn()
-// 'a' 
-// A {desc: "a", fn: ƒ}
-b = a.fn
-b()
-// 'a'
-// A {desc: "a", fn: ƒ}
+  a = new A()
+
+  a.fn()
+  // 'a' 
+  // A {desc: "a", fn: ƒ}
+
+  b = a.fn
+  b()
+  // 'a'
+  // A {desc: "a", fn: ƒ}
 ```
 ### 参考
 [issue: React函数可以直接写？不用写成箭头函数的形式](https://github.com/umijs/umi/issues/1496)

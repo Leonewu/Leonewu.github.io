@@ -1,6 +1,9 @@
 echo "\033[32m 执行hugo命令 \033[0m"
 hugo
 echo "\033[32m hugo编译完毕 \033[0m"
+echo "\033[32m 删除根目录编译的文件 \033[0m"
+rm -rf `ls .. | egrep -v "(\.git|src)"`
+echo "\033[32m 删除完毕 \033[0m"
 echo "\033[32m 正在复制public中的文件到最外层目录... \033[0m"
 cp -rf public/* ../
 echo "\033[32m 复制完毕 \033[0m"
