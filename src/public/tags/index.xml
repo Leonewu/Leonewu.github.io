@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Leone</title>
@@ -6,9 +6,19 @@
     <description>Recent content in Tags on Leone</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Mon, 11 Mar 2019 17:45:00 +0800</lastBuildDate>
     
 	<atom:link href="https://leonewu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>箭头函数</title>
+      <link>https://leonewu.github.io/tags/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Mon, 11 Mar 2019 17:45:00 +0800</pubDate>
+      
+      <guid>https://leonewu.github.io/tags/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>prototype</title>
@@ -16,6 +26,15 @@
       <pubDate>Wed, 06 Mar 2019 10:22:03 +0800</pubDate>
       
       <guid>https://leonewu.github.io/tags/prototype/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>umiJs</title>
+      <link>https://leonewu.github.io/tags/umijs/</link>
+      <pubDate>Wed, 06 Mar 2019 10:22:03 +0800</pubDate>
+      
+      <guid>https://leonewu.github.io/tags/umijs/</guid>
       <description></description>
     </item>
     
@@ -29,29 +48,20 @@
     </item>
     
     <item>
-      <title>算法</title>
-      <link>https://leonewu.github.io/tags/%E7%AE%97%E6%B3%95/</link>
-      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://leonewu.github.io/tags/%E7%AE%97%E6%B3%95/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>箭头函数</title>
-      <link>https://leonewu.github.io/tags/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/</link>
-      <pubDate>Mon, 11 Mar 2019 17:45:00 +0800</pubDate>
-      
-      <guid>https://leonewu.github.io/tags/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>继承</title>
       <link>https://leonewu.github.io/tags/%E7%BB%A7%E6%89%BF/</link>
       <pubDate>Wed, 06 Mar 2019 10:22:03 +0800</pubDate>
       
       <guid>https://leonewu.github.io/tags/%E7%BB%A7%E6%89%BF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>算法</title>
+      <link>https://leonewu.github.io/tags/%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://leonewu.github.io/tags/%E7%AE%97%E6%B3%95/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>umiJs on Leone</title>
+    <link>https://leonewu.github.io/tags/umijs/</link>
+    <description>Recent content in umiJs on Leone</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 06 Mar 2019 10:22:03 +0800</lastBuildDate>
+    
+	<atom:link href="https://leonewu.github.io/tags/umijs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>网络请求和状态管理</title>
+      <link>https://leonewu.github.io/post/presentation/</link>
+      <pubDate>Wed, 06 Mar 2019 10:22:03 +0800</pubDate>
+      
+      <guid>https://leonewu.github.io/post/presentation/</guid>
+      <description>网络请求和状态管理 src/services/model 存放请求相关的文件 src/models 存放状态相关文件 网络请求 @umijs/plugin-request 基于 umi-request 和 ahooks 的 useRequest 提供了一套统一的网络请求和错误处理方案 umi-request 和 axios 的区别 axios axios 浏览器</description>
+    </item>
+    
+  </channel>
+</rss>

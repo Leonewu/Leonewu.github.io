@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Leone</title>
@@ -6,6 +6,7 @@
     <description>Recent content in Categories on Leone</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Mon, 11 Mar 2019 17:45:00 +0800</lastBuildDate>
     
 	<atom:link href="https://leonewu.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16,6 +17,15 @@
       <pubDate>Mon, 11 Mar 2019 17:45:00 +0800</pubDate>
       
       <guid>https://leonewu.github.io/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>umiJs</title>
+      <link>https://leonewu.github.io/categories/umijs/</link>
+      <pubDate>Wed, 06 Mar 2019 10:22:03 +0800</pubDate>
+      
+      <guid>https://leonewu.github.io/categories/umijs/</guid>
       <description></description>
     </item>
     
